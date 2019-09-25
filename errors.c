@@ -2,6 +2,7 @@
 /**
  * errors - Function that print the error ID
  * @id: ID of the error
+ * @file: Name of the file treated.
  * Return: Nothing.
  */
 void errors(int id, char *file)
