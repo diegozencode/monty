@@ -26,7 +26,6 @@ void my_read(FILE *fp)
 /**
  * option_opcode - select the correspond opcode funtion
  * @token1: opcode
- * @token2: parameter
  */
 void option_opcode(char *token1)
 {
