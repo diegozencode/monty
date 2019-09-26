@@ -16,7 +16,7 @@ void my_read(FILE *fp)
 		token1 = strtok(line, " \n");
 		token2 = strtok(NULL, " \n");
 		if (token1 != NULL)
-			option_opcode(token1, stack);
+			option_opcode(token1, &stack);
 	}
 	free(line);
 }
@@ -25,7 +25,7 @@ void my_read(FILE *fp)
  * option_opcode - select the correspond opcode funtion
  * @token1: opcode
  */
-void option_opcode(char *token1, stack_t *stack)
+void option_opcode(char *token1, stack_t **stack)
 {
 	unsigned int i = 0;
 	/* stack_t *stack = NULL; */
@@ -49,12 +49,11 @@ void option_opcode(char *token1, stack_t *stack)
 		 */
 		{NULL, NULL}
 	};
-
 	while (list[i].opcode != NULL)
 	{
 		if (strcmp(token1, list[i].opcode) == 0)
 			/* printf("Is in list tk1[%s] tk2[%s]", token1, token2); */
-			list[i].f(&stack, 1);
+			list[i].f(stack, 1);
 		i++;
 	}
 }

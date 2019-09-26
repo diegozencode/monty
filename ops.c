@@ -53,9 +53,10 @@ void pall(stack_t **stack, unsigned int line_number)
 		printf("%d",tmp->n);
 		} */
 
-	if (*stack != NULL)
+	if (stack != NULL)
 	{
 		printf("tiene algo\n");
+		printf("%d", (*stack)->n);
 	}
 	else
 	{
