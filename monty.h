@@ -33,6 +33,6 @@ typedef struct instruction_s
 } instruction_t;
 
 void errors(int id, char *file);
-
+void my_read(FILE *fp);
 
 #endif
