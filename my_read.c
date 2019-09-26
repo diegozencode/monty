@@ -9,16 +9,14 @@ void my_read(FILE *fp)
 	char *line = NULL;
 	size_t len = 0;
 	char *token1 = NULL;
+	stack_t *stack = NULL;
 
 	while (getline(&line, &len, fp) != -1)
 	{
 		token1 = strtok(line, " \n");
 		token2 = strtok(NULL, " \n");
 		if (token1 != NULL)
-			option_opcode(token1);
-		printf("------------\n");
-		printf("token1 --> [%s]\n", token1);
-		printf("token2 --> [%s]\n", token2);
+			option_opcode(token1, stack);
 	}
 	free(line);
 }
@@ -27,10 +25,10 @@ void my_read(FILE *fp)
  * option_opcode - select the correspond opcode funtion
  * @token1: opcode
  */
-void option_opcode(char *token1)
+void option_opcode(char *token1, stack_t *stack)
 {
 	unsigned int i = 0;
-	stack_t *stack = NULL;
+	/* stack_t *stack = NULL; */
 
 	instruction_t list[] = {
 		{"push", push},
@@ -60,5 +58,4 @@ void option_opcode(char *token1)
 		i++;
 	}
 	pall(&stack, 1);
-	stack = NULL;
 }

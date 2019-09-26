@@ -13,11 +13,9 @@ void push(stack_t **stack, unsigned int line_number)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		free(new);
 		free_stack(*stack);
 		errors(4, "test");
 	}
-	printf("Inside push %s\n", token2);
 	new->n = atoi(token2);
 	new->prev = NULL;
 	if (*stack == NULL)
@@ -31,7 +29,6 @@ void push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new;
 		*stack = new;
 	}
-	printf("--I'm in push function--\n");
 }
 
 /**
@@ -43,14 +40,13 @@ void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 	(void)line_number;
-	printf("Im in pall function\n");
 
 	tmp = *stack;
 
 	while (tmp !=  NULL)
 	{
-		printf("%d\n", tmp->n);
 		tmp = tmp->next;
+		printf("%d",tmp->n);
 	}
 }
 
