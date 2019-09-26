@@ -34,7 +34,9 @@ typedef struct instruction_s
 extern char *token2;
 void errors(int id, char *file);
 void my_read(FILE *fp);
-void option_opcode(char *token1, char *token2);
+void option_opcode(char *token1);
 void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void free_stack(stack_t *top);
 
 #endif

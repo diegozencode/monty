@@ -10,13 +10,12 @@ void my_read(FILE *fp)
 	size_t len = 0;
 	char *token1 = NULL;
 
-
 	while (getline(&line, &len, fp) != -1)
 	{
 		token1 = strtok(line, " \n");
 		token2 = strtok(NULL, " \n");
 		if (token1 != NULL)
-			option_opcode(token1, token2);
+			option_opcode(token1);
 		printf("------------\n");
 		printf("token1 --> [%s]\n", token1);
 		printf("token2 --> [%s]\n", token2);
@@ -29,15 +28,15 @@ void my_read(FILE *fp)
  * @token1: opcode
  * @token2: parameter
  */
-void option_opcode(char *token1, char *token2)
+void option_opcode(char *token1)
 {
 	unsigned int i = 0;
+	stack_t *stack = NULL;
 
 	instruction_t list[] = {
 		{"push", push},
-		/*
-		   }{"pall", pall},
-		 * {"pint", pint},
+		{"pall", pall},
+		 /* {"pint", pint},
 		 * {"pop", pop},
 		 * {"swap", swap},
 		 * {"add", add},
@@ -57,7 +56,10 @@ void option_opcode(char *token1, char *token2)
 	while (list[i].opcode != NULL)
 	{
 		if (strcmp(token1, list[i].opcode) == 0)
-			printf("Is in list tk1[%s] tk2[%s]", token1, token2);
+			/* printf("Is in list tk1[%s] tk2[%s]", token1, token2); */
+			list[i].f(&stack, 1);
 		i++;
 	}
+	pall(&stack, 1);
+	stack = NULL;
 }

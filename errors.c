@@ -21,6 +21,9 @@ void errors(int id, char *file)
 	case 3:
 		break;
 	case 4:
+		(void)file;
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
 		break;
 	}
 }
