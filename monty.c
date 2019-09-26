@@ -21,6 +21,7 @@ int main(int argc, char **argv)
 	}
 	my_read(fp);
 	fclose(fp);
+	test();
 
 	printf("testing %s\n", argv[1]);
 	exit(EXIT_SUCCESS);

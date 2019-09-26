@@ -31,8 +31,8 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+extern char *token2;
 void errors(int id, char *file);
 void my_read(FILE *fp);
-
+void test(void);
 #endif

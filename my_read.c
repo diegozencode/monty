@@ -3,12 +3,13 @@
  * my_read - Function that process all the document.
  * @fp: file that will readed.
  */
+char *token2 = NULL;
+
 void my_read(FILE *fp)
 {
 	char *line = NULL;
 	size_t len = 0;
 	char *token1 = NULL;
-	char *token2 = NULL;
 
 
 	while (getline(&line, &len, fp) != -1)
@@ -20,4 +21,5 @@ void my_read(FILE *fp)
 		printf("token2 --> [%s]\n", token2);
 	}
 	free(line);
+	token2 = "Daniel";
 }
