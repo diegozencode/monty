@@ -13,10 +13,12 @@ void push(stack_t **stack, unsigned int line_number)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		free_stack(*stack);
+		/* free_stack(*stack); */
 		errors(4, "test");
 	}
+	printf("before atoi %s\n", token2);
 	new->n = atoi(token2);
+	printf("after atoi %d\n", atoi(token2));
 	new->prev = NULL;
 	if (*stack == NULL)
 	{
@@ -29,6 +31,7 @@ void push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new;
 		*stack = new;
 	}
+	printf("Hasta aqui todo esta rodo bien!");
 }
 
 /**
@@ -38,15 +41,25 @@ void push(stack_t **stack, unsigned int line_number)
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp;
+	/* stack_t *tmp; */
 	(void)line_number;
 
-	tmp = *stack;
+	/*tmp = *stack;
+	  printf("%d", tmp->n);
 
 	while (tmp !=  NULL)
 	{
 		tmp = tmp->next;
 		printf("%d",tmp->n);
+		} */
+
+	if (*stack != NULL)
+	{
+		printf("tiene algo\n");
+	}
+	else
+	{
+		printf("no tiene nada\n");
 	}
 }
 

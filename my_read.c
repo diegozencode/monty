@@ -57,5 +57,4 @@ void option_opcode(char *token1, stack_t *stack)
 			list[i].f(&stack, 1);
 		i++;
 	}
-	pall(&stack, 1);
 }
