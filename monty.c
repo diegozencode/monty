@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		errors(1, "asd");
+		errors(1, " ");
 	}
 
 	fp = fopen(argv[1], "r");
@@ -23,6 +23,5 @@ int main(int argc, char **argv)
 	my_read(fp);
 	fclose(fp);
 
-	printf("testing %s\n", argv[1]);
 	exit(EXIT_SUCCESS);
 }
