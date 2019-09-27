@@ -8,13 +8,18 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
-	(void)line_number;
+
+	if (token2 == NULL)
+	{
+		free_stack(*stack);
+		errors(5, "namefile", line_number);
+	}
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
 		free_stack(*stack);
-		errors(4, "test");
+		errors(4, "test", line_number);
 	}
 	new->n = atoi(token2);
 	new->prev = NULL;
@@ -46,6 +51,20 @@ void pall(stack_t **stack, unsigned int line_number)
 		printf("%d\n", tmp->n);
 		tmp = tmp->next;
 	}
+}
+
+/**
+ * pint - prints the value at the top of the stack
+ * @stack: top pointer to stack
+ * @line_number: number line
+ */
+void pint(stack_t **stack, unsigned int line_number)
+{
+	(void)line_number;
+	if (*stack == NULL)
+		errors(3, "1", 1);
+
+	printf("%d\n", (*stack)->n);
 }
 
 /**

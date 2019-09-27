@@ -12,13 +12,13 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		errors(1, " ");
+		errors(1, " ", 1);
 	}
 
 	fp = fopen(argv[1], "r");
 	if (fp == NULL)
 	{
-		errors(2, argv[1]);
+		errors(2, argv[1], 1);
 	}
 	my_read(fp);
 	fclose(fp);
