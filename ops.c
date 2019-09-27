@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		/* free_stack(*stack); */
+		free_stack(*stack);
 		errors(4, "test");
 	}
 	new->n = atoi(token2);

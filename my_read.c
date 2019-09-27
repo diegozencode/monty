@@ -20,6 +20,7 @@ void my_read(FILE *fp)
 		if (token1 != NULL)
 			option_opcode(token1, &stack, counter);
 	}
+	free_stack(stack);
 	free(line);
 }
 
