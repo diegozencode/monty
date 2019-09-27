@@ -38,6 +38,8 @@ void option_opcode(char *token1, stack_t **stack, int counter)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	while (list[i].opcode != NULL)

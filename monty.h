@@ -38,6 +38,8 @@ void option_opcode(char *token1, stack_t **stack, int counter);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *top);
 
 #endif

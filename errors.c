@@ -33,5 +33,9 @@ void errors(int id, char *file, int counter)
 		fprintf(stderr, "L%d: usage: push integer\n", counter);
 		exit(EXIT_FAILURE);
 		break;
+	case 6:
+		(void)file;
+		fprintf(stderr, "L%d: can't pop an empty stack\n", counter);
+		exit(EXIT_FAILURE);
 	}
 }
