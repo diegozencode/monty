@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * main - Entry point
  * @argc: Number of parameters.
@@ -9,11 +10,9 @@ int main(int argc, char **argv)
 {
 	FILE *fp;
 
-	printf("%i %s\n", argc, argv[1]);
-
 	if (argc != 2)
 	{
-		errors(1, "asd");
+		errors(1, " ");
 	}
 
 	fp = fopen(argv[1], "r");
@@ -21,9 +20,8 @@ int main(int argc, char **argv)
 	{
 		errors(2, argv[1]);
 	}
-	fprintf(fp, "test testing");
+	my_read(fp);
 	fclose(fp);
 
-	printf("testing %s\n", argv[1]);
 	exit(EXIT_SUCCESS);
 }

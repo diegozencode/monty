@@ -2,6 +2,7 @@
 /**
  * errors - Function that print the error ID
  * @id: ID of the error
+ * @file: Name of the file treated.
  * Return: Nothing.
  */
 void errors(int id, char *file)
@@ -20,6 +21,9 @@ void errors(int id, char *file)
 	case 3:
 		break;
 	case 4:
+		(void)file;
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
 		break;
 	}
 }
