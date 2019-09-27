@@ -20,7 +20,7 @@ void errors(int id, char *file, int counter)
 		exit(EXIT_FAILURE);
 		break;
 	case 3:
-		fprintf(stderr, "L%d: can't pint, stack empty\n", 2);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", counter);
 		exit(EXIT_FAILURE);
 		break;
 	case 4:
